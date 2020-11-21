@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.1.0","implementation":{"name":"cucumber-jvm","version":"6.8.2"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"25.211-b12"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1605916244","nanos":54000000}}},{"source":{"uri":"file:///C:/PageObjectModel/cucumberFinal/./src/test/resources/features/Login.feature","data":"Feature: Login Tests\n  I want to have all login related scenarios in this feature file\n\n\t@smoke\n  Scenario: Happy Path Login\n    Given User landed on the homepage of AUT\n    When User enters the credentials \"sampletest@test.com\" and \"Test123\"\n    Then User should be logged in successfully\n\n\t@regression\n  Scenario: Unhappy Path Login\n    Given User landed on the homepage of AUT\n    When User enters the credentials \"sampletest@test.com\" and \"test123\"\n    Then User should see the error message\n    \n\t@regression\n  Scenario Outline: Multiple Logins\n    Given User landed on the homepage of AUT\n    When User enters the credentials \"\u003cEmail\u003e\" and \"\u003cPassword\u003e\"\n    Then User should be logged in successfully\n\n    Examples: \n      | Email                  | Password |\n      | sampletest@test.com    | Test123  |\n      | sampletest774@test.com | Test123  |\n      | sampletest388@test.com | Test123  |\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/PageObjectModel/cucumberFinal/./src/test/resources/features/Login.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Login Tests","description":"  I want to have all login related scenarios in this feature file","children":[{"scenario":{"location":{"line":5,"column":3},"tags":[{"location":{"line":4,"column":2},"name":"@smoke","id":"d0c6b294-4683-4003-8b56-42dbdb03d16c"}],"keyword":"Scenario","name":"Happy Path Login","steps":[{"location":{"line":6,"column":5},"keyword":"Given ","text":"User landed on the homepage of AUT","id":"c2b048a4-07c1-4c07-9745-57fc0b924b01"},{"location":{"line":7,"column":5},"keyword":"When ","text":"User enters the credentials \"sampletest@test.com\" and \"Test123\"","id":"bcfe36f2-628f-46e3-96df-d1e1fd1a0d09"},{"location":{"line":8,"column":5},"keyword":"Then ","text":"User should be logged in successfully","id":"ab15f624-30f5-4fb9-ab48-474b0d8cd598"}],"id":"d6da45fe-9a8d-42c0-9f19-668a58170276"}},{"scenario":{"location":{"line":11,"column":3},"tags":[{"location":{"line":10,"column":2},"name":"@regression","id":"f126297f-4feb-46df-8092-6d7f2d97049d"}],"keyword":"Scenario","name":"Unhappy Path Login","steps":[{"location":{"line":12,"column":5},"keyword":"Given ","text":"User landed on the homepage of AUT","id":"08f3cd41-5884-4505-a7dc-d2cb351f6016"},{"location":{"line":13,"column":5},"keyword":"When ","text":"User enters the credentials \"sampletest@test.com\" and \"test123\"","id":"028cb73d-97e6-44dd-926a-8e978ef7731b"},{"location":{"line":14,"column":5},"keyword":"Then ","text":"User should see the error message","id":"ea83706c-26db-42db-9c07-e0f5dee5a1b1"}],"id":"74b760aa-3f63-4673-adf9-52889c937fbc"}},{"scenario":{"location":{"line":17,"column":3},"tags":[{"location":{"line":16,"column":2},"name":"@regression","id":"4a8dc4d3-fbef-4f24-b3c5-37314b0023f4"}],"keyword":"Scenario Outline","name":"Multiple Logins","steps":[{"location":{"line":18,"column":5},"keyword":"Given ","text":"User landed on the homepage of AUT","id":"c76d193f-3e04-43ad-8cfc-d3c1c0e06b6c"},{"location":{"line":19,"column":5},"keyword":"When ","text":"User enters the credentials \"\u003cEmail\u003e\" and \"\u003cPassword\u003e\"","id":"1fca1c47-b693-4b8b-a61f-a394a6f438f4"},{"location":{"line":20,"column":5},"keyword":"Then ","text":"User should be logged in successfully","id":"a8307259-dbb3-42c5-b6f7-b01e27d0d1b3"}],"examples":[{"location":{"line":22,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":23,"column":7},"cells":[{"location":{"line":23,"column":9},"value":"Email"},{"location":{"line":23,"column":34},"value":"Password"}],"id":"9842d476-ef47-4b8e-b94c-6b95a6d542f6"},"tableBody":[{"location":{"line":24,"column":7},"cells":[{"location":{"line":24,"column":9},"value":"sampletest@test.com"},{"location":{"line":24,"column":34},"value":"Test123"}],"id":"3f9706f4-bc7c-42d5-88f7-ef6947ab43ba"},{"location":{"line":25,"column":7},"cells":[{"location":{"line":25,"column":9},"value":"sampletest774@test.com"},{"location":{"line":25,"column":34},"value":"Test123"}],"id":"7d69c964-5ae4-4e29-bd0e-a8715b93b633"},{"location":{"line":26,"column":7},"cells":[{"location":{"line":26,"column":9},"value":"sampletest388@test.com"},{"location":{"line":26,"column":34},"value":"Test123"}],"id":"b5084e39-b34a-4db1-be7e-e342016bdcf3"}],"id":"11502f70-280d-4d67-8141-7f418af8290b"}],"id":"700f5872-65ad-4435-8dec-8d29c0d4d981"}}]}}},{"pickle":{"id":"63dca226-b190-4a25-be59-a4873cfab166","uri":"file:///C:/PageObjectModel/cucumberFinal/./src/test/resources/features/Login.feature","name":"Happy Path Login","language":"en","steps":[{"text":"User landed on the homepage of AUT","id":"9f515879-dd81-4c55-ab13-fa3dbb8cf898","astNodeIds":["c2b048a4-07c1-4c07-9745-57fc0b924b01"]},{"text":"User enters the credentials \"sampletest@test.com\" and \"Test123\"","id":"265016c1-62f5-4635-b21e-718688bd876c","astNodeIds":["bcfe36f2-628f-46e3-96df-d1e1fd1a0d09"]},{"text":"User should be logged in successfully","id":"975bd810-67ac-4d0c-9af3-6d7ec5016bf8","astNodeIds":["ab15f624-30f5-4fb9-ab48-474b0d8cd598"]}],"tags":[{"name":"@smoke","astNodeId":"d0c6b294-4683-4003-8b56-42dbdb03d16c"}],"astNodeIds":["d6da45fe-9a8d-42c0-9f19-668a58170276"]}},{"pickle":{"id":"188c9a20-6d63-48f4-b09e-b7ff8cc09935","uri":"file:///C:/PageObjectModel/cucumberFinal/./src/test/resources/features/Login.feature","name":"Unhappy Path Login","language":"en","steps":[{"text":"User landed on the homepage of AUT","id":"26fcc933-ebf9-4b47-81a5-f7e1dcfac916","astNodeIds":["08f3cd41-5884-4505-a7dc-d2cb351f6016"]},{"text":"User enters the credentials \"sampletest@test.com\" and \"test123\"","id":"1e9ac510-1352-4af2-8aad-8c94130226e2","astNodeIds":["028cb73d-97e6-44dd-926a-8e978ef7731b"]},{"text":"User should see the error message","id":"22a7d9cf-0a99-43fc-936b-6aba317d006a","astNodeIds":["ea83706c-26db-42db-9c07-e0f5dee5a1b1"]}],"tags":[{"name":"@regression","astNodeId":"f126297f-4feb-46df-8092-6d7f2d97049d"}],"astNodeIds":["74b760aa-3f63-4673-adf9-52889c937fbc"]}},{"pickle":{"id":"5ed9a898-2ea6-4829-a797-6355d73c6568","uri":"file:///C:/PageObjectModel/cucumberFinal/./src/test/resources/features/Login.feature","name":"Multiple Logins","language":"en","steps":[{"text":"User landed on the homepage of AUT","id":"74e03e73-2440-416d-88f7-0cc562c3f74e","astNodeIds":["c76d193f-3e04-43ad-8cfc-d3c1c0e06b6c","3f9706f4-bc7c-42d5-88f7-ef6947ab43ba"]},{"text":"User enters the credentials \"sampletest@test.com\" and \"Test123\"","id":"3e4a7b60-818f-47c0-ace2-60689431a36d","astNodeIds":["1fca1c47-b693-4b8b-a61f-a394a6f438f4","3f9706f4-bc7c-42d5-88f7-ef6947ab43ba"]},{"text":"User should be logged in successfully","id":"ab1f3a69-5500-431f-9d30-3e6db453f3d6","astNodeIds":["a8307259-dbb3-42c5-b6f7-b01e27d0d1b3","3f9706f4-bc7c-42d5-88f7-ef6947ab43ba"]}],"tags":[{"name":"@regression","astNodeId":"4a8dc4d3-fbef-4f24-b3c5-37314b0023f4"}],"astNodeIds":["700f5872-65ad-4435-8dec-8d29c0d4d981","3f9706f4-bc7c-42d5-88f7-ef6947ab43ba"]}},{"pickle":{"id":"54cab72c-b72d-43e3-bfba-7efd6dbf77f4","uri":"file:///C:/PageObjectModel/cucumberFinal/./src/test/resources/features/Login.feature","name":"Multiple Logins","language":"en","steps":[{"text":"User landed on the homepage of AUT","id":"3caf6450-8760-424b-bc17-a3563bc5485a","astNodeIds":["c76d193f-3e04-43ad-8cfc-d3c1c0e06b6c","7d69c964-5ae4-4e29-bd0e-a8715b93b633"]},{"text":"User enters the credentials \"sampletest774@test.com\" and \"Test123\"","id":"8809091e-40b5-4e24-ac8a-e7b97f4ac406","astNodeIds":["1fca1c47-b693-4b8b-a61f-a394a6f438f4","7d69c964-5ae4-4e29-bd0e-a8715b93b633"]},{"text":"User should be logged in successfully","id":"e9c2e0a5-b750-4dc7-b606-dcdd23a76e54","astNodeIds":["a8307259-dbb3-42c5-b6f7-b01e27d0d1b3","7d69c964-5ae4-4e29-bd0e-a8715b93b633"]}],"tags":[{"name":"@regression","astNodeId":"4a8dc4d3-fbef-4f24-b3c5-37314b0023f4"}],"astNodeIds":["700f5872-65ad-4435-8dec-8d29c0d4d981","7d69c964-5ae4-4e29-bd0e-a8715b93b633"]}},{"pickle":{"id":"3abe4851-bd87-4e5e-8f91-ff0937408eb1","uri":"file:///C:/PageObjectModel/cucumberFinal/./src/test/resources/features/Login.feature","name":"Multiple Logins","language":"en","steps":[{"text":"User landed on the homepage of AUT","id":"f121c62d-583b-4a70-bfa0-03901f8dcc8d","astNodeIds":["c76d193f-3e04-43ad-8cfc-d3c1c0e06b6c","b5084e39-b34a-4db1-be7e-e342016bdcf3"]},{"text":"User enters the credentials \"sampletest388@test.com\" and \"Test123\"","id":"f09fdf22-f7d3-473f-96fd-2cb7e2ec7ca9","astNodeIds":["1fca1c47-b693-4b8b-a61f-a394a6f438f4","b5084e39-b34a-4db1-be7e-e342016bdcf3"]},{"text":"User should be logged in successfully","id":"2a64be0f-209e-46be-af13-b258e1eaa036","astNodeIds":["a8307259-dbb3-42c5-b6f7-b01e27d0d1b3","b5084e39-b34a-4db1-be7e-e342016bdcf3"]}],"tags":[{"name":"@regression","astNodeId":"4a8dc4d3-fbef-4f24-b3c5-37314b0023f4"}],"astNodeIds":["700f5872-65ad-4435-8dec-8d29c0d4d981","b5084e39-b34a-4db1-be7e-e342016bdcf3"]}},{"hook":{"id":"1cdd09a4-3393-4a3c-bb26-e24782b9ef5a","sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"setUp"}}}},{"stepDefinition":{"id":"18751631-9cc6-4256-b9f0-568944302080","pattern":{"source":"User should be logged in successfully"},"sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"user_should_be_logged_in_successfully"}}}},{"stepDefinition":{"id":"f5c70ed2-01c0-4090-a819-5722952550d1","pattern":{"source":"User should see the error message"},"sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"user_should_see_the_error_message"}}}},{"stepDefinition":{"id":"a859a3ee-f26a-448e-80e3-99c612a604ec","pattern":{"source":"User landed on the homepage of AUT"},"sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"user_landed_on_the_homepage_of_aut"}}}},{"stepDefinition":{"id":"56202d87-c82a-4bc7-a2b2-aea47889caa1","pattern":{"source":"User enters the credentials {string} and {string}"},"sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"user_enters_the_credentials_and","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"hook":{"id":"c985537e-492f-432d-b1c6-669b4decd69d","sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"tearDown"}}}},{"testCase":{"id":"612387c3-adbd-443e-a081-cc4ef9d830fd","pickleId":"63dca226-b190-4a25-be59-a4873cfab166","testSteps":[{"id":"d671c6d7-64b9-42cc-8b83-f0f7538b24d8","hookId":"1cdd09a4-3393-4a3c-bb26-e24782b9ef5a"},{"id":"a295c7fc-128c-43ae-a99a-b9d5866030f1","pickleStepId":"9f515879-dd81-4c55-ab13-fa3dbb8cf898","stepDefinitionIds":["a859a3ee-f26a-448e-80e3-99c612a604ec"],"stepMatchArgumentsLists":[{}]},{"id":"e49d5b72-7fa3-4b59-b28b-0a8fb6d10651","pickleStepId":"265016c1-62f5-4635-b21e-718688bd876c","stepDefinitionIds":["56202d87-c82a-4bc7-a2b2-aea47889caa1"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":28,"value":"\"sampletest@test.com\"","children":[{"start":29,"value":"sampletest@test.com","children":[{}]},{"children":[{}]}]}},{"parameterTypeName":"string","group":{"start":54,"value":"\"Test123\"","children":[{"start":55,"value":"Test123","children":[{}]},{"children":[{}]}]}}]}]},{"id":"043edf85-4732-4332-8a7c-df701cc4ee29","pickleStepId":"975bd810-67ac-4d0c-9af3-6d7ec5016bf8","stepDefinitionIds":["18751631-9cc6-4256-b9f0-568944302080"],"stepMatchArgumentsLists":[{}]},{"id":"ee7cb756-5da0-41eb-82bd-bd9e0be36b61","hookId":"c985537e-492f-432d-b1c6-669b4decd69d"}]}},{"testCaseStarted":{"timestamp":{"seconds":"1605916244","nanos":170000000},"testCaseId":"612387c3-adbd-443e-a081-cc4ef9d830fd","id":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"testStepStarted":{"timestamp":{"seconds":"1605916244","nanos":186000000},"testStepId":"d671c6d7-64b9-42cc-8b83-f0f7538b24d8","testCaseStartedId":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"2","nanos":436000000}},"timestamp":{"seconds":"1605916246","nanos":622000000},"testStepId":"d671c6d7-64b9-42cc-8b83-f0f7538b24d8","testCaseStartedId":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"testStepStarted":{"timestamp":{"seconds":"1605916246","nanos":622000000},"testStepId":"a295c7fc-128c-43ae-a99a-b9d5866030f1","testCaseStartedId":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"6","nanos":541000000}},"timestamp":{"seconds":"1605916253","nanos":163000000},"testStepId":"a295c7fc-128c-43ae-a99a-b9d5866030f1","testCaseStartedId":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"testStepStarted":{"timestamp":{"seconds":"1605916253","nanos":163000000},"testStepId":"e49d5b72-7fa3-4b59-b28b-0a8fb6d10651","testCaseStartedId":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"4","nanos":586000000}},"timestamp":{"seconds":"1605916257","nanos":749000000},"testStepId":"e49d5b72-7fa3-4b59-b28b-0a8fb6d10651","testCaseStartedId":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"testStepStarted":{"timestamp":{"seconds":"1605916257","nanos":750000000},"testStepId":"043edf85-4732-4332-8a7c-df701cc4ee29","testCaseStartedId":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"2","nanos":319000000}},"timestamp":{"seconds":"1605916260","nanos":69000000},"testStepId":"043edf85-4732-4332-8a7c-df701cc4ee29","testCaseStartedId":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"testStepStarted":{"timestamp":{"seconds":"1605916260","nanos":69000000},"testStepId":"ee7cb756-5da0-41eb-82bd-bd9e0be36b61","testCaseStartedId":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":634000000}},"timestamp":{"seconds":"1605916260","nanos":703000000},"testStepId":"ee7cb756-5da0-41eb-82bd-bd9e0be36b61","testCaseStartedId":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"testCaseFinished":{"timestamp":{"seconds":"1605916260","nanos":703000000},"testCaseStartedId":"e32fdc71-747a-4333-ac10-5bc18493a572"}},{"hook":{"id":"1cdd09a4-3393-4a3c-bb26-e24782b9ef5a","sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"setUp"}}}},{"stepDefinition":{"id":"64f75545-303c-42dd-b82f-54b9b5b8def0","pattern":{"source":"User should be logged in successfully"},"sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"user_should_be_logged_in_successfully"}}}},{"stepDefinition":{"id":"7ac87bb8-6101-4499-9f71-1d945c2b82db","pattern":{"source":"User should see the error message"},"sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"user_should_see_the_error_message"}}}},{"stepDefinition":{"id":"bfdddb27-2915-4c81-b1a1-e4b95a158e46","pattern":{"source":"User landed on the homepage of AUT"},"sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"user_landed_on_the_homepage_of_aut"}}}},{"stepDefinition":{"id":"29279e13-5ee9-4f11-af0f-558675bcb72f","pattern":{"source":"User enters the credentials {string} and {string}"},"sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"user_enters_the_credentials_and","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"hook":{"id":"c985537e-492f-432d-b1c6-669b4decd69d","sourceReference":{"javaMethod":{"className":"stepDef.LoginStepDef","methodName":"tearDown"}}}},{"testCase":{"id":"9c14580e-f06c-444f-af29-52b06cb287a9","pickleId":"188c9a20-6d63-48f4-b09e-b7ff8cc09935","testSteps":[{"id":"4338ee36-4efc-4b99-b2e9-f5eb69eba2b2","hookId":"1cdd09a4-3393-4a3c-bb26-e24782b9ef5a"},{"id":"1531afa8-c38a-4395-8e85-9c39fe9263d4","pickleStepId":"26fcc933-ebf9-4b47-81a5-f7e1dcfac916","stepDefinitionIds":["bfdddb27-2915-4c81-b1a1-e4b95a158e46"],"stepMatchArgumentsLists":[{}]},{"id":"744ee8fd-762c-4654-9581-04aee9d703ea","pickleStepId":"1e9ac510-1352-4af2-8aad-8c94130226e2","stepDefinitionIds":["29279e13-5ee9-4f11-af0f-558675bcb72f"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":28,"value":"\"sampletest@test.com\"","children":[{"start":29,"value":"sampletest@test.com","children":[{}]},{"children":[{}]}]}},{"parameterTypeName":"string","group":{"start":54,"value":"\"test123\"","children":[{"start":55,"value":"test123","children":[{}]},{"children":[{}]}]}}]}]},{"id":"ed3c18e7-47ff-49a7-a593-cb829fda13d7","pickleStepId":"22a7d9cf-0a99-43fc-936b-6aba317d006a","stepDefinitionIds":["7ac87bb8-6101-4499-9f71-1d945c2b82db"],"stepMatchArgumentsLists":[{}]},{"id":"fea4f45c-7043-4f09-b028-4741cc0c50c8","hookId":"c985537e-492f-432d-b1c6-669b4decd69d"}]}},{"testCaseStarted":{"timestamp":{"seconds":"1605916260","nanos":703000000},"testCaseId":"9c14580e-f06c-444f-af29-52b06cb287a9","id":"afebf16c-7de4-4c9d-b943-71061cbf32a8"}},{"testStepStarted":{"timestamp":{"seconds":"1605916260","nanos":703000000},"testStepId":"4338ee36-4efc-4b99-b2e9-f5eb69eba2b2","testCaseStartedId":"afebf16c-7de4-4c9d-b943-71061cbf32a8"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds"
